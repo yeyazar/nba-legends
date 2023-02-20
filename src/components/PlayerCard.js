@@ -1,19 +1,32 @@
-const PlayerCard = (item) => {
-  const { name, img} = item;
+import { useState } from "react";
 
+const PlayerCard = ({ name, img, statistics }) => {
+  /* console.log(statistics); */
+  const [toggle, setToggle] = useState(true);
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
   return (
-    <div className="playercard">
-      <img src={img} alt={name} />
-      <h1 className="names">{name}</h1>
-      <div className="stats-container">
-        <ul>
-            <p>Point</p>
-            <p>Rebound</p>
-            <p>Assist</p>
-            <p>All-Star</p>
-        </ul>
-        
-      </div>
+    <div className="playercard" onClick={handleToggle}>
+      
+      {toggle ? (
+        <img src={img} alt={name} />
+      ) : (
+        <div className="stats-container">
+          <ul className="inner-container">
+            {statistics.map((item2, index) => {
+              return (
+                <p className="list" key={index}>
+                  🏀{item2}
+                </p>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
+      <h4 className="names">{name}</h4>
+
     </div>
   );
 };
