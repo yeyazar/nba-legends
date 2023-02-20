@@ -25,9 +25,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  justify-content: center;
+  
   .search-bar {
+    margin-top: 1rem;
     padding-left: 1rem;
     width: 30%;
     height: 3rem;
@@ -44,37 +44,41 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
-    margin: 2rem auto;
+    margin: 2rem;
     width: 90%;
   }
 }
 
 .playercard {
-  display: relative;
   margin: 2rem 0;
   border-radius: 20px;
   background-color: white;
+  /* border: 2px blue solid; */
 
-  /* background-color: white; */
   img {
     width: 400px;
     height: 600px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
   }
   &:hover img {
-    transform: scale(0.8);
+    transform: scale(0.9);
     transition: all 0.5s ease-in-out;
   }
   .names {
-    font-size: 1.4rem;
-    background-color: rgb(234, 223, 223);
-    border-radius: 0 0 20px 20px;
-    display: absolute;
-    bottom: 50%;
+    /* border: 2px red solid; */
     text-align: center;
-    padding: 0.5rem 0 0.8rem 0;
+    margin-top: -2%;
+    border-top: 4px gray solid;
+
+    font-size: 2rem;
+    background-color: rgb(234, 223, 223);
+    border-radius: 0px 0px 20px 20px;
+
+    padding: 0.8rem 0 0.8rem 0;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
   }
   .stats-container {
     background-image: transparent;
@@ -83,7 +87,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 400px;
-    height: 600px;
+    height: 604.5px;
 
     font-size: 1.6rem;
     .inner-container {
